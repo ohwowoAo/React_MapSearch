@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Search from './components/Search';
+import Map from './components/Map';
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
       {/* <div id="map" style="width:500px;height:400px;"></div> */}
       <WrapInner>
         <Search />
+        <Map />
       </WrapInner>
       
     </div>
