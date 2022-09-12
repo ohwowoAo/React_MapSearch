@@ -28,14 +28,12 @@ const Search = () => {
     }, [value]);
 
     return (
-        <div>
             <InputForm onSubmit={(e)=> e.preventDefault()}>
                 <Input 
                     value={value}
                     onChange={chageInput}
                 />
             </InputForm>
-        </div>
     );
 };
 

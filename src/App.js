@@ -4,18 +4,18 @@ import Search from './components/Search';
 import Map from './components/Map';
 
 
+
 const App = () => {
 
  
   return (
-    <div>
+    <>
       {/* <div id="map" style="width:500px;height:400px;"></div> */}
       <WrapInner>
         <Search />
         <Map />
       </WrapInner>
-      
-    </div>
+    </>
   );
 };
 
