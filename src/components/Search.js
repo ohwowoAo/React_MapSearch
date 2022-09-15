@@ -39,7 +39,8 @@ const Search = () => {
 
 
 const InputForm = styled.form`
-
+    margin: 15px 0;
+    text-align:center;
 `;
 const Input = styled.input`
 
