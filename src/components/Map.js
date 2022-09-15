@@ -3,7 +3,7 @@ import Styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 
 const { kakao } = window; //스크립트로 kakao map api 를 가져오면 window 전역 객체에 들어감  -> 구조분해 이용
-const Map = ({searchKeyword}) => {
+const Map = () => {
   //redux store 가져와줌
     let search = useSelector((state) => state.search );
     console.log(search);
