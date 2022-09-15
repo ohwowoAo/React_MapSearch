@@ -1,8 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import Styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 
 const { kakao } = window; //스크립트로 kakao map api 를 가져오면 window 전역 객체에 들어감  -> 구조분해 이용
 const Map = ({searchKeyword}) => {
+  //redux store 가져와줌
+    let search = useSelector((state) => state.search );
+    console.log(search);
+    let dispatch = useDispatch();
+
   const kakaoDiv = useRef();
   const places = new kakao.maps.services.Places();
   const infowindow = new kakao.maps.InfoWindow({zindex:1});
@@ -13,7 +19,7 @@ const Map = ({searchKeyword}) => {
       level: 3,
     };
     const map = new kakao.maps.Map(kakaoDiv.current, options);
-    places.keywordSearch(searchKeyword, callback);
+    places.keywordSearch(search, callback);
     function callback (result, status) { // 검색 결과 , 바운더리 세팅
       if (status === kakao.maps.services.Status.OK) {
         console.log(result);
@@ -38,7 +44,7 @@ const Map = ({searchKeyword}) => {
     }
     
 
-  }, [searchKeyword]);
+  }, [search]);
 
   return <KakaoMap ref={kakaoDiv} />;
 };
